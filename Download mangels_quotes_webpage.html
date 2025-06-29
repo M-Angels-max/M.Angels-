@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M.Angels’ | Words in the Dark</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      color: #f5f5f5;
+      background: url('https://images.unsplash.com/photo-1549887534-103c1b6c9b0d?auto=format&fit=crop&w=1650&q=80') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.3) blur(2px);
+      padding: 0 20px;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 60px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffcc70;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .typewriter {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #ccc;
+      border-right: 2px solid #ccc;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #ccc; }
+    }
+
+    .quote-box {
+      background: rgba(30, 30, 30, 0.85);
+      border-left: 4px solid #ffcc70;
+      padding: 20px;
+      margin: 20px 0;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(255, 204, 112, 0.2);
+    }
+
+    .quote {
+      font-size: 1.2rem;
+    }
+
+    .author {
+      text-align: right;
+      font-style: italic;
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #444;
+      padding: 20px;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 6px;
+    }
+
+    .form-box h2 {
+      color: #ffcc70;
+      margin-bottom: 10px;
+    }
+
+    .form-box input, .form-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+    .form-box button {
+      background: #ffcc70;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>M.Angels’</h1>
+      <p class="typewriter">Words in the dark — a sanctuary for thoughts</p>
+    </header>
+
+    <!-- Sample quotes -->
+    <div class="quote-box">
+      <div class="quote">"The moon understands what it means to be alone."</div>
+      <div class="author">— M.Angels’</div>
+    </div>
+
+    <div class="quote-box">
+      <div class="quote">"Ink bleeds what hearts can't say aloud."</div>
+      <div class="author">— M.Angels’</div>
+    </div>
+
+    <!-- Quote submission form -->
+    <div class="form-box">
+      <h2>Submit Your Quote</h2>
+      <form onsubmit="submitQuote(event)">
+        <input type="text" id="author" placeholder="Your name or pen name" required />
+        <textarea id="quoteText" rows="4" placeholder="Your quote..." required></textarea>
+        <button type="submit">Send Quote</button>
+      </form>
+      <p id="formResponse" style="margin-top:10px; color:lightgreen;"></p>
+    </div>
+
+    <footer>
+      &copy; 2025 M.Angels’. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function submitQuote(e) {
+      e.preventDefault();
+      document.getElementById('formResponse').textContent = "Thank you for your words. ✨ (Note: This form is not connected to a server.)";
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
